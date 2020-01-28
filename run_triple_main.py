@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
     env = ArmEnv()
     policy_name_vec = ['Average_TD3']
-    average_steps = [5, 10, 20, 40]
+    average_steps = [5]
     for policy_name in policy_name_vec:
         for num_steps in average_steps:
             args.average_steps = num_steps
