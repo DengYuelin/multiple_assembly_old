@@ -30,14 +30,14 @@ def main(env, args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--policy_name", default='TD3')  # Policy name
-    parser.add_argument("--env_name", default="Peg-in-hole-double_assembly")  # OpenAI gym environment name
-    parser.add_argument("--log_path", default='runs/double_assembly')
+    parser.add_argument("--env_name", default="Peg-in-hole-single_assembly")  # OpenAI gym environment name
+    parser.add_argument("--log_path", default='runs/single_assembly_step')
 
     parser.add_argument("--eval_only", default=False)
     parser.add_argument("--render", default=False)
     parser.add_argument("--save_video", default=False)
     parser.add_argument("--video_size", default=(600, 400))
-    parser.add_argument("--save_all_policy", default=False)
+    parser.add_argument("--save_all_policy", default=True)
     parser.add_argument("--load_policy_idx", default='')
     parser.add_argument("--evaluate_Q_value", default=False)
     parser.add_argument("--reward_name", default='r_s')
@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
     env = ArmEnv()
     policy_name_vec = ['Average_TD3']
-    average_steps = [5]
+    average_steps = [10]
     for policy_name in policy_name_vec:
         for num_steps in average_steps:
             args.average_steps = num_steps
