@@ -302,12 +302,12 @@ class ArmEnv(object):
     def __execute_action(self, action):
         """ execute action """
         # do action
-        self.x += action[0]
-        self.y += action[1]
-        self.z -= action[2]
-        self.alpha += action[3]
-        self.beta += action[4]
-        self.gamma -= action[5]
+        self.x += action[0] * 0.7
+        self.y += action[1] * 0.7
+        self.z -= action[2] * 0.7
+        self.alpha += action[3] * 0.7
+        self.beta += action[4] * 0.7
+        # self.gamma -= action[5] * 0.7
 
         # bound position
         self.x = np.clip(self.x, self.initPosition[0] - self.armPosition[0] - 0.02, self.initPosition[0] - self.armPosition[0] + 0.02)
